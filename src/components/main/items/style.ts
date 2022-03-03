@@ -40,4 +40,12 @@ export const Header = styled.div`
   .btn_green {
     background-color: #61ba46;
   }
+
+  span {
+    font-size: 18pt;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;

@@ -8,6 +8,7 @@ const MainWhiteBox = () => {
         <div className="btn_red btn"></div>
         <div className="btn_yellow btn"></div>
         <div className="btn_green btn"></div>
+        <span>mirim</span>
       </S.Header>
     </S.WhiteBoxContainer>
   );
