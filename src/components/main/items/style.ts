@@ -50,3 +50,16 @@ export const Header = styled.div`
     transform: translateX(-50%);
   }
 `;
+
+export const StartBox = styled.div``;
+
+export const StartBoxContainer = styled.div`
+  width: 620px;
+  height: 400px;
+  background-color: orange;
+  padding: 0;
+  position: absolute;
+  border-radius: 24px;
+`;
+
+export const StartBoxModal = styled.div``;
