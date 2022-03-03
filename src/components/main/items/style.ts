@@ -42,9 +42,10 @@ export const Header = styled.div`
   }
 
   span {
-    font-size: 18pt;
+    font-size: 18px;
     position: absolute;
-    top: 10px;
+    padding: 0;
+    top: 14px;
     left: 50%;
     transform: translateX(-50%);
   }
