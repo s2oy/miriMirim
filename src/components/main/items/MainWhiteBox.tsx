@@ -1,7 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import * as S from "./style";
 
-const MainWhiteBox = () => {
+interface Props {
+  item: any;
+}
+
+const MainWhiteBox = ({item}: Props) => {
+  const [sound, setSound] = useState<boolean>(item.sound);
+
   return (
     <S.WhiteBoxContainer>
       <S.Header>
@@ -11,7 +17,11 @@ const MainWhiteBox = () => {
         <span>mirim</span>
       </S.Header>
 
-      <div className="btn_sound"></div>
+      <img
+        src={sound ? "/assets/sound.svg" : "/assets/mute.svg"}
+        onClick={() => setSound(!sound)}
+        alt=""
+      />
 
       <S.Modal>
         <h2>미림여자정보과학고등학교 과별 성향 테스트</h2>
