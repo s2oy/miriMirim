@@ -60,6 +60,38 @@ export const Modal = styled.div`
   margin: 0 auto;
   transform: translateY(70%);
   box-shadow: 8px 8px 8px #d3d3d3;
-`;
 
-export const StartBoxModal = styled.div``;
+  h2 {
+    font-size: 28px;
+    /* letter-spacing: px; */
+    color: #37876d;
+    text-align: center;
+    font-style: bold;
+    padding-top: 49px;
+    padding-bottom: 0px;
+  }
+
+  p {
+    width: 480px;
+    height: 80px;
+    color: #616161;
+    font-size: 20px;
+    text-align: center;
+    line-height: 28px;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 55px;
+  }
+
+  .btn_start {
+    width: 280px;
+    height: 65px;
+    background-color: #37876d;
+    border-radius: 4px;
+    color: #eaeaea;
+    font-size: 26px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 60px;
+  }
+`;
