@@ -11,6 +11,8 @@ const MainWhiteBox = () => {
         <span>mirim</span>
       </S.Header>
 
+      <div className="btn_sound"></div>
+
       <S.Modal>
         <h2>미림여자정보과학고등학교 과별 성향 테스트</h2>
         <p>
