@@ -51,15 +51,15 @@ export const Header = styled.div`
   }
 `;
 
-export const StartBox = styled.div``;
-
-export const StartBoxContainer = styled.div`
+export const Modal = styled.div`
   width: 620px;
   height: 400px;
-  background-color: orange;
+  background-color: #f6f6f6;
   padding: 0;
-  position: absolute;
   border-radius: 24px;
+  margin: 0 auto;
+  transform: translateY(70%);
+  box-shadow: 8px 8px 8px #d3d3d3;
 `;
 
 export const StartBoxModal = styled.div``;
