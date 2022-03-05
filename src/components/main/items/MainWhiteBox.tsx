@@ -1,11 +1,12 @@
 import React, {useState} from "react";
 import * as S from "./style";
 
-interface Props {
-  item: any;
-}
+// interface Props {
+//   item: any;
+// }
 
-const MainWhiteBox = ({item}: Props) => {
+const MainWhiteBox = (item: any) => {
+  // if (item === undefined) return <></>;
   const [sound, setSound] = useState<boolean>(item.sound);
 
   return (
@@ -18,7 +19,7 @@ const MainWhiteBox = ({item}: Props) => {
       </S.Header>
 
       <img
-        src={sound ? "/assets/sound.svg" : "/assets/mute.svg"}
+        src={sound ? "/assets/mute.svg" : "/assets/volume.svg"}
         onClick={() => setSound(!sound)}
         alt=""
       />
