@@ -8,6 +8,12 @@ export const WhiteBoxContainer = styled.div`
   background-color: white;
   margin: 0 auto;
   border-radius: 8px;
+
+  img {
+    width: 28px;
+    margin-top: 15px;
+    margin-left: 29px;
+  }
 `;
 
 export const Header = styled.div`
@@ -58,7 +64,7 @@ export const Modal = styled.div`
   padding: 0;
   border-radius: 24px;
   margin: 0 auto;
-  transform: translateY(70%);
+  transform: translateY(58%);
   box-shadow: 8px 8px 8px #d3d3d3;
 
   h2 {
