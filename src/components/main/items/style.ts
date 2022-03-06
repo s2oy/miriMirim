@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 
 export const MainWhiteBox = styled.div``;
 
+export const BoxContainer = styled.div``;
 export const WhiteBoxContainer = styled.div`
   width: 120vh;
   height: 100%;
@@ -57,7 +58,7 @@ export const Header = styled.div`
   }
 `;
 
-export const Modal = styled.div`
+export const ModalContainer = styled.div`
   width: 620px;
   height: 400px;
   background-color: #f6f6f6;
@@ -66,10 +67,18 @@ export const Modal = styled.div`
   margin: 0 auto;
   transform: translateY(58%);
   box-shadow: 8px 8px 8px #d3d3d3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
   h2 {
     font-size: 28px;
-    /* letter-spacing: px; */
+    letter-spacing: px;
     color: #37876d;
     text-align: center;
     font-style: bold;
