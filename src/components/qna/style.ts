@@ -22,13 +22,11 @@ export const QnaContainer = styled.div`
   #content {
     text-align: center;
     margin-top: 20px;
+    color: #818181;
+    font-size: 20px;
 
-    span {
-      color: #818181;
-      font-size: 20px;
-      :hover {
-        color: #dcdcdc;
-      }
+    :hover {
+      color: #dcdcdc;
     }
   }
 `;
