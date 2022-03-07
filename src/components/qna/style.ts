@@ -15,6 +15,10 @@ export const QnaContainer = styled.div`
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 
+  :hover {
+    background-color: #37876d;
+  }
+
   #content {
     text-align: center;
     margin-top: 20px;
@@ -22,6 +26,9 @@ export const QnaContainer = styled.div`
     span {
       color: #818181;
       font-size: 20px;
+      :hover {
+        color: #dcdcdc;
+      }
     }
   }
 `;
