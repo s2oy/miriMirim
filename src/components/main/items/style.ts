@@ -108,5 +108,11 @@ export const ModalContainer = styled.div`
     text-align: center;
     margin: 0 auto;
     line-height: 60px;
+
+    :hover {
+      background-color: #327862;
+      color: #e3e3e3;
+      /* box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 10px inset; */
+    }
   }
 `;
