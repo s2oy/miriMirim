@@ -20,8 +20,10 @@ export const QnaContainer = styled.div`
   }
 
   #content {
+    width: 500px;
+    height: 80px;
     text-align: center;
-    margin-top: 20px;
+    padding-top: 20px;
     color: #818181;
     font-size: 20px;
 
