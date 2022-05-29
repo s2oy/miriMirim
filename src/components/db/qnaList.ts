@@ -1,36 +1,41 @@
-[
+interface QnaData {
+  q: string;
+  a: {answer: string; type: string}[];
+}
+
+export const QnaData: QnaData[] = [
   {
-    "q": "1. PPT를 만들때 나는 어디에 속할까?",
-    "a": [
-      {"answer": "이미지랑 텍스트를 잘 보이게 배치한다.", "type": "software"},
+    q: "1. PPT를 만들때 나는 어디에 속할까?",
+    a: [
+      {answer: "이미지랑 텍스트를 잘 보이게 배치한다.", type: "software"},
       {
-        "answer": "이미지랑 텍스트를 가독성 있게 정렬한다.",
-        "type": "websolution"
+        answer: "이미지랑 텍스트를 가독성 있게 정렬한다.",
+        type: "websolution",
       },
       {
-        "answer": "이미지랑 텍스트에 선, 그림자 등을 넣어 꾸며준다.",
-        "type": "design"
-      }
-    ]
+        answer: "이미지랑 텍스트에 선, 그림자 등을 넣어 꾸며준다.",
+        type: "design",
+      },
+    ],
   },
   {
-    "q": "2. 웹사이트를 사용할 때 가장 짜증나는 상황은?",
-    "a": [
-      {"answer": "쓸데없는 기능들만 나열해 두었을 때", "type": "software"},
-      {"answer": "가운데 정렬이 맞지 않을 때", "type": "websolution"},
-      {"answer": "색 조합이 맞지 않을 때", "type": "design"}
-    ]
+    q: "2. 웹사이트를 사용할 때 가장 짜증나는 상황은?",
+    a: [
+      {answer: "쓸데없는 기능들만 나열해 두었을 때", type: "software"},
+      {answer: "가운데 정렬이 맞지 않을 때", type: "websolution"},
+      {answer: "색 조합이 맞지 않을 때", type: "design"},
+    ],
   },
   {
-    "q": "3. 문제점이 발생했을 때 나의 행동은?",
-    "a": [
+    q: "3. 문제점이 발생했을 때 나의 행동은?",
+    a: [
       {
-        "answer": "문제에 대해 깊게 파고들어 원인을 찾고 해결한다.",
-       " type": "software"
+        answer: "문제에 대해 깊게 파고들어 원인을 찾고 해결한다.",
+        type: "software",
       },
       {
-        "answer": "문제를 파악한 후 빠르게 해결방안부터 찾는다.",
-        "type": "websolution"
+        answer: "문제를 파악한 후 빠르게 해결방안부터 찾는다.",
+        type: "websolution",
       },
       {
         answer: "문제를 남들과 다른 해결방안을 찾으려고 한다.",
