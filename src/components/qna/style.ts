@@ -32,3 +32,5 @@ export const QnaContainer = styled.div`
     }
   }
 `;
+
+export const QnaListItem = styled.span``;
