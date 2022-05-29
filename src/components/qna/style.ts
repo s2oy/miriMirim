@@ -33,4 +33,11 @@ export const QnaContainer = styled.div`
   }
 `;
 
+export const Title = styled.h2`
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+`;
+
 export const QnaListItem = styled.span``;

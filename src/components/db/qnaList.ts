@@ -1,9 +1,9 @@
-interface QnaData {
+export interface QnaData {
   q: string;
   a: {answer: string; type: string}[];
 }
 
-export const QnaData: QnaData[] = [
+export const QnaList: QnaData[] = [
   {
     q: "1. PPT를 만들때 나는 어디에 속할까?",
     a: [
@@ -114,3 +114,5 @@ export const QnaData: QnaData[] = [
     ],
   },
 ];
+
+export default QnaList;

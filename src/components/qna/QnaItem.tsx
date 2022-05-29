@@ -1,11 +1,8 @@
 import React from "react";
 import * as S from "./style";
-// @ts-ignore
-import qnaData from "../db/qnaList";
 
-const QnaItem = () => {
-  console.log(qnaData);
-  console.log(qnaData);
+const QnaItem = ({qnaData}: any) => {
+  // console.log(qnaData.a.answer);
   return (
     <S.QnaWrapper>
       <S.QnaContainer></S.QnaContainer>
