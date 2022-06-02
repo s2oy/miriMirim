@@ -4,7 +4,7 @@ import "./App.css";
 import DesignPage from "./components/design";
 import MainPage from "./components/main";
 import QnaPage from "./components/qna";
-import WebPage from './components/web';
+import WebPage from "./components/web";
 
 function App() {
   return (
