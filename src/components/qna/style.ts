@@ -44,11 +44,18 @@ export const QnaContent = styled.span`
   }
 `;
 
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const Title = styled.h2`
   position: absolute;
   top: 38%;
   left: 50%;
   transform: translate(-50%, 0%);
+
+  /* justify-content: space-around; */
 `;
 
 export const QnaListItem = styled.span``;

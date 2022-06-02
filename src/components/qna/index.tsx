@@ -20,12 +20,19 @@ const QnaPage = () => {
   const [qna, setQna]: any = useState([]);
   const [q, setQ] = useState<number>(0);
 
+  console.log(qnaData);
+
   return (
     <S.QnaWrapper>
       <MainContainer>
         <MainWhiteBox></MainWhiteBox>
-        <S.Title>{qnaData[q].q}</S.Title>
-        <QnaItem {...qnaData}></QnaItem>
+        <S.TitleContainer>
+          {qnaData.map((q: any, id: number) => (
+            <S.Title key={q.id}>{qnaData[0].q}</S.Title>
+          ))}
+
+          <QnaItem {...qnaData} />
+        </S.TitleContainer>
       </MainContainer>
     </S.QnaWrapper>
   );
