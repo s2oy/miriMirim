@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
 
 export const QnaWrapper = styled.div``;
+
 export const QnaContainer = styled.div`
   width: 500px;
-  height: 100px;
+  height: 90px;
   background-color: #e6e6e6;
   border-radius: 4px;
   position: absolute;
@@ -15,8 +16,12 @@ export const QnaContainer = styled.div`
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 
-  :hover {
+  text-align: center;
+  font-size: 1.3em;
+  padding: 10px;
+  padding :hover {
     background-color: #37876d;
+    color: #dcdcdc;
   }
 
   #content {
@@ -26,9 +31,31 @@ export const QnaContainer = styled.div`
     padding-top: 20px;
     color: #818181;
     font-size: 20px;
+  }
 
-    :hover {
-      color: #dcdcdc;
-    }
+  li {
+    color: red;
+    position: absolute;
   }
 `;
+
+export const QnaContent = styled.span`
+  :hover {
+  }
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Title = styled.h2`
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+
+  /* justify-content: space-around; */
+`;
+
+export const QnaListItem = styled.span``;
