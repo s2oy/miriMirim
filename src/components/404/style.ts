@@ -1,72 +1,62 @@
 import styled from "@emotion/styled";
 
-export const MainWrapper = styled.div`
-  // width: 100%;
-  // height: 200px;
-  position: relative;
-  background-color: #616161;
-  min-width: 100vw;
-  min-height: 100vw;
-  text-align: center;
-`;
+export const MainWrapper = styled.div``;
 
-export const Top = styled.span`
+export const ModalContainer = styled.div`
+  width: 620px;
+  height: 400px;
+  background-color: #f6f6f6;
+  padding: 0;
+  border-radius: 24px;
+  margin: 0 auto;
+  transform: translateY(58%);
+  box-shadow: 6px 6px 6px 6px #454545;
   position: absolute;
-  left: 70%;
-  top: 30%;
-  transform: translate(-40%, -70%);
-  color: black;
-  font-size: 15pt;
-`;
-export const Mid = styled.span`
-  position: absolute;
-  left: 65%;
-  top: 38%;
-  transform: translate(-30%, -100%);
-  color: black;
-  font-size: 15pt;
-`;
-export const Bottom = styled.span`
-  position: absolute;
-  left: 60%;
-  top: 45%;
-  transform: translate(-40%, -70%);
-  color: black;
-  font-size: 15pt;
-`;
-export const Introduce = styled.span`
-  position: absolute;
-  left: 55%;
-  top: 97%;
-  color: black;
-  font-size: 13pt;
-`;
-export const Home = styled.img`
-  margin: auto 0;
-  position: absolute;
-  left: 72.3%;
-  top: 97%;
-`;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 
-export const ShareBtn = styled.img`
-  margin: auto 0;
-  position: absolute;
-  left: 74.5%;
-  top: 96.6%;
-`;
-
-export const Imgwrapper = styled.div`
-  #img1 {
-    width: 1000px;
-    height: auto;
+  h2 {
+    font-size: 28px;
+    letter-spacing: px;
+    color: #37876d;
+    text-align: center;
+    font-style: bold;
+    padding-top: 49px;
+    padding-bottom: 0px;
   }
 
-  #img2 {
-    width: 20px;
-    height: 20px;
+  p {
+    width: 480px;
+    height: 80px;
+    color: #616161;
+    font-size: 20px;
+    text-align: center;
+    line-height: 28px;
+    margin: 0 auto;
+    padding-top: 60px;
+    padding-bottom: 30px;
   }
-  #img3 {
-    width: 22px;
-    height: 28px;
+
+  .btn_start {
+    width: 280px;
+    height: 65px;
+    background-color: #37876d;
+    border-radius: 4px;
+    color: #eaeaea;
+    font-size: 26px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 60px;
+
+    :hover {
+      background-color: #327862;
+      color: #e3e3e3;
+      /* box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 10px inset; */
+    }
   }
 `;
