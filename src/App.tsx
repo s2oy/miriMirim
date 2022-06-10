@@ -5,6 +5,7 @@ import DesignPage from "./components/design";
 import MainPage from "./components/main";
 import QnaPage from "./components/qna";
 import WebPage from "./components/web";
+import NotFound from "./components/404";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<MainPage />} />
         <Route path="/qna" element={<QnaPage />} />
         <Route path="/web" element={<WebPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
