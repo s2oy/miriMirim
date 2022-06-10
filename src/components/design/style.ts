@@ -12,15 +12,15 @@ export const MainWrapper = styled.div`
 
 export const Top = styled.span`
   position: absolute;
-  left: 70%;
-  top: 30%;
-  transform: translate(-40%, -70%);
+  left: 63%;
+  top: 29.5%;
+  transform: translate(-30%, -70%);
   color: black;
   font-size: 15pt;
 `;
 export const Mid = styled.span`
   position: absolute;
-  left: 65%;
+  left: 60%;
   top: 38%;
   transform: translate(-30%, -100%);
   color: black;
@@ -28,7 +28,7 @@ export const Mid = styled.span`
 `;
 export const Bottom = styled.span`
   position: absolute;
-  left: 60%;
+  left: 57.5%;
   top: 45%;
   transform: translate(-40%, -70%);
   color: black;
@@ -36,7 +36,7 @@ export const Bottom = styled.span`
 `;
 export const Introduce = styled.span`
   position: absolute;
-  left: 55%;
+  left: 58.5%;
   top: 97%;
   color: black;
   font-size: 13pt;
@@ -44,17 +44,16 @@ export const Introduce = styled.span`
 export const Home = styled.img`
   margin: auto 0;
   position: absolute;
-  left: 72.3%;
+  left: 72.6%;
   top: 97%;
 `;
 
 export const ShareBtn = styled.img`
   margin: auto 0;
   position: absolute;
-  left: 74.5%;
+  left: 74%;
   top: 96.6%;
 `;
-
 export const Imgwrapper = styled.div`
   #img1 {
     width: 1000px;
