@@ -27,12 +27,17 @@ const QnaPage = () => {
       <MainContainer>
         <MainWhiteBox></MainWhiteBox>
         <S.TitleContainer>
-          {qnaData.map((q: any, id: number) => (
+          {/* {qnaData.map((q: any, id: number) => (
             <S.Title key={q.id}>{qnaData[0].q}</S.Title>
-          ))}
+          ))} */}
 
-          <QnaItem {...qnaData} />
+          <S.Title>{qnaData[q].q}</S.Title>
         </S.TitleContainer>
+        <S.QnaItemContainer>
+          <S.QnaItem>{qnaData[q].a[0].answer}</S.QnaItem>
+          <S.QnaItem>{qnaData[q].a[1].answer}</S.QnaItem>
+          <S.QnaItem>{qnaData[q].a[2].answer}</S.QnaItem>
+        </S.QnaItemContainer>
       </MainContainer>
     </S.QnaWrapper>
   );

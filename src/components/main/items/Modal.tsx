@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
-import qna from "../../qna/index";
 import * as S from "./style";
 
 const Modal = () => {
@@ -12,6 +11,7 @@ const Modal = () => {
         본인의 의지가 확고하시다면 그 과로 선택하시기 바랍니다. <br />
         재미로만 참고해주세요.
       </p>
+
       <Link to="/qna" style={{textDecoration: "none"}}>
         <div className="btn_start">테스트 시작하기</div>
       </Link>

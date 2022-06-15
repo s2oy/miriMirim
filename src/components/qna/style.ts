@@ -2,26 +2,46 @@ import styled from "@emotion/styled";
 
 export const QnaWrapper = styled.div``;
 
-export const QnaContainer = styled.div`
+export const QnaItemContainer = styled.div`
+  position: absolute;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-top: 40rem;
+  float: left;
+`;
+
+export const QnaItem = styled.button`
   width: 500px;
   height: 90px;
   background-color: #e6e6e6;
-  border-radius: 4px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  border: none;
+  outline: none;
+  margin-top: 30px;
+  /* top: 50%;
+  left: 50%; */
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translate(140%, -230%);
 
+  color: #818181;
+  font-size: 20px;
   text-align: center;
   font-size: 1.3em;
   padding: 10px;
   padding :hover {
     background-color: #37876d;
     color: #dcdcdc;
+  }
+
+  &:hover {
+    background-color: #dbd9d9;
+    color: #424242;
+    /* box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.5); */
   }
 
   #content {
@@ -51,7 +71,7 @@ export const TitleContainer = styled.div`
 
 export const Title = styled.h2`
   position: absolute;
-  top: 38%;
+  top: 36%;
   left: 50%;
   transform: translate(-50%, 0%);
 
@@ -59,3 +79,5 @@ export const Title = styled.h2`
 `;
 
 export const QnaListItem = styled.span``;
+
+// export const QnaItem = styled.div``;

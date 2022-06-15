@@ -104,6 +104,7 @@ export const ModalContainer = styled.div`
     background-color: #37876d;
     border-radius: 4px;
     color: #eaeaea;
+    text-decoration: none;
     font-size: 26px;
     text-align: center;
     margin: 0 auto;
