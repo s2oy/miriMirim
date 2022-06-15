@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import * as S from "./style";
 
 const DesignPage = () => {
@@ -14,7 +15,9 @@ const DesignPage = () => {
 
           <S.Introduce>송은원 백서연 최지우 김예슬 이다혜</S.Introduce>
 
-          <S.Home src="../result-img/home-black.png" id="img2" />
+          <Link to="/" style={{textDecoration: "none"}}>
+            <S.Home src="../result-img/home-black.png" id="img2" />
+          </Link>
           <S.ShareBtn src="../result-img/share-black.png" id="img3" />
         </S.Imgwrapper>
       </S.MainWrapper>
