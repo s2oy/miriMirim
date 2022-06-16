@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "src/components/main/index.tsx",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
