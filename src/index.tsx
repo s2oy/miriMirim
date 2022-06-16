@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import {RecoilRoot} from "recoil";
+// import firebase from "firebase";
 import styled from "@emotion/styled";
 
 const Flex = styled.div`
