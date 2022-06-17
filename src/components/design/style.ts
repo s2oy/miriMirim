@@ -36,24 +36,38 @@ export const Bottom = styled.span`
 `;
 export const Introduce = styled.span`
   position: absolute;
-  left: 58.5%;
+  left: 57.4%;
   top: 97%;
   color: black;
   font-size: 13pt;
 `;
-export const Home = styled.img`
-  margin: auto 0;
-  position: absolute;
-  left: 72.6%;
-  top: 97%;
-`;
-
-export const ShareBtn = styled.img`
+export const Home = styled.button`
   margin: auto 0;
   position: absolute;
   left: 74%;
-  top: 96.6%;
+  top: 97.3%;
+  border: none;
+  background-color: transparent;
 `;
+
+export const ShareBtn = styled.button`
+  margin: auto 0;
+  position: absolute;
+  left: 72.5%;
+  top: 97%;
+  border: none;
+  background-color: transparent;
+`;
+
+export const LinkBtn = styled.button`
+  margin: auto 0;
+  position: absolute;
+  left: 71.3%;
+  top: 97.3%;
+  border: none;
+  background-color: transparent;
+`;
+
 export const Imgwrapper = styled.div`
   #img1 {
     width: 1000px;
@@ -67,5 +81,9 @@ export const Imgwrapper = styled.div`
   #img3 {
     width: 22px;
     height: 28px;
+  }
+  #img4 {
+    width: 17px;
+    height: 21px;
   }
 `;
