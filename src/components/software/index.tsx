@@ -1,8 +1,17 @@
 import React from "react";
 import * as S from "./style";
-import {Link} from "react-router-dom";
 
 const SoftwarePage = () => {
+  const handleCopyClipBoard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+
+      alert("복사 성공!");
+    } catch (error) {
+      alert("복사 실패!");
+    }
+  };
+
   return (
     <>
       <S.MainWrapper>
@@ -15,10 +24,17 @@ const SoftwarePage = () => {
 
           <S.Introduce>송은원 백서연 최지우 김예슬 이다혜</S.Introduce>
 
-          <Link to="/" style={{textDecoration: "none"}}>
-            <S.Home src="../result-img/home-white.png" id="img2" />
-          </Link>
-          <S.ShareBtn src="../result-img/share-white.png" id="img3" />
+          <S.Home>
+            <img src="../result-img/home-white.png" id="img2" />
+          </S.Home>
+
+          <S.ShareBtn>
+            <img src="../result-img/share-white.png" id="img3" />
+          </S.ShareBtn>
+
+          <S.LinkBtn onClick={() => handleCopyClipBoard("복사된 텍스트")}>
+            <img src="../result-img/link-white.png" id="img4" />
+          </S.LinkBtn>
         </S.Imgwrapper>
       </S.MainWrapper>
     </>
