@@ -16,7 +16,7 @@ const NotFound = () => {
               원활한 테스트 진행을 위해서 <br />
               아래 버튼을 눌러 테스트로 이동해주세요.
             </p>
-            <Link to="/" style={{textDecoration: "none"}}>
+            <Link to="/" style={{textDecoration: "none", cursor: "pointer"}}>
               <div className="btn_start">테스트로 돌아가기</div>
             </Link>
           </S.ModalContainer>
