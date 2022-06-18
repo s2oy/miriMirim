@@ -9,7 +9,7 @@ export const QnaItemContainer = styled.div`
   justify-content: space-between;
   align-content: center;
   flex-wrap: wrap;
-  margin-top: 40rem;
+  margin-top: 30rem;
   float: left;
 `;
 
@@ -19,14 +19,14 @@ export const QnaItem = styled.button`
   background-color: #e6e6e6;
   border: none;
   outline: none;
-  margin-top: 30px;
+  margin-bottom: 30px;
   /* top: 50%;
   left: 50%; */
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  transform: translate(140%, -230%);
+  transform: translate(140%, -100%);
 
   color: #818181;
   font-size: 20px;
@@ -39,9 +39,10 @@ export const QnaItem = styled.button`
   }
 
   &:hover {
-    background-color: #dbd9d9;
+    background-color: #37876d;
     color: #424242;
     /* box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.5); */
+    transition: all 0.5s;
   }
 
   #content {
@@ -71,7 +72,7 @@ export const TitleContainer = styled.div`
 
 export const Title = styled.h2`
   position: absolute;
-  top: 36%;
+  top: 33%;
   left: 50%;
   transform: translate(-50%, 0%);
 
