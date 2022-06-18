@@ -3,6 +3,16 @@ import {Link} from "react-router-dom";
 import * as S from "./style";
 
 const WebPage = () => {
+  const handleCopyClipBoard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+
+      alert("복사 성공!");
+    } catch (error) {
+      alert("복사 실패!");
+    }
+  };
+
   return (
     <>
       <S.MainWrapper>
@@ -15,10 +25,23 @@ const WebPage = () => {
         <S.Developer3>최지우</S.Developer3>
         <S.Developer4>김예슬</S.Developer4>
         <S.Developer5>이다혜</S.Developer5>
+
+        <S.Share style={{cursor: "pointer"}}>
+          <img src="../result-img/share-white.png" id="img3" />
+        </S.Share>
+
+        <S.LinkBtn
+          onClick={() => handleCopyClipBoard("복사된 텍스트")}
+          style={{cursor: "pointer"}}
+        >
+          <img src="../result-img/link-white.png" id="img4" />
+        </S.LinkBtn>
+
         <Link to="/" style={{textDecoration: "none"}}>
-          <S.Home src="../result-img/home-white.png" id="img2" />
+          <S.Home style={{cursor: "pointer"}}>
+            <img src="../result-img/home-white.png" id="img2" />
+          </S.Home>
         </Link>
-        <S.Share src="../result-img/share-white.png" id="img3" />
       </S.MainWrapper>
     </>
   );
