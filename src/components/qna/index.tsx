@@ -1,4 +1,5 @@
 import React, {MouseEvent, useState} from "react";
+import {useNavigate} from "react-router-dom";
 import * as S from "./style";
 import {MainContainer} from "../main/style";
 import MainWhiteBox from "../main/items/MainWhiteBox";
@@ -20,6 +21,7 @@ const QnaPage = () => {
   const [qna, setQna]: any = useState([]);
   const [q, setQ] = useState<number>(0);
   const [userAns, setUserAns] = useState<string[]>([]);
+  const navigate = useNavigate();
 
   const handleOnSelect = (e: MouseEvent<HTMLButtonElement>) => {
     const value = e.currentTarget.value;
@@ -27,8 +29,26 @@ const QnaPage = () => {
     setQ(prev => prev + 1);
   };
 
-  console.log(qnaData);
+  const handleMoveToResult = () => {
+    // 클릭한 버튼의 해당 value 값을 높이기
+    // 3가지   비교를 어떻게 할 것인지?
+    //if ~과의 수가 제일 많으면 location.href = '과경로' 뒤로가지지않게하려면 location.replace로 해야함
+    //   const result = userAns.reduce(
+    //     (
+    //       acc: {
+    //         [index: string]: any;
+    //       },
+    //       ans,
+    //       index
+    //     ) => {
+    //       acc[ans] = ++acc[ans];
+    //     },
+    //     {software: 0, web: 0, design: 0, result: ""}
+    //   );
+    navigate("/design");
+  };
 
+  if (!qnaData[q]) return <>{handleMoveToResult()}</>;
   return (
     <S.QnaWrapper>
       <MainContainer>
