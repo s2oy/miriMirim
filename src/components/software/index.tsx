@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import * as S from "./style";
 
 const SoftwarePage = () => {
@@ -24,15 +25,20 @@ const SoftwarePage = () => {
 
           <S.Introduce>송은원 백서연 최지우 김예슬 이다혜</S.Introduce>
 
-          <S.Home>
-            <img src="../result-img/home-white.png" id="img2" />
-          </S.Home>
+          <Link to="/">
+            <S.Home style={{cursor: "pointer"}}>
+              <img src="../result-img/home-white.png" id="img2" />
+            </S.Home>
+          </Link>
 
-          <S.ShareBtn>
+          <S.ShareBtn style={{cursor: "pointer"}}>
             <img src="../result-img/share-white.png" id="img3" />
           </S.ShareBtn>
 
-          <S.LinkBtn onClick={() => handleCopyClipBoard("복사된 텍스트")}>
+          <S.LinkBtn
+            onClick={() => handleCopyClipBoard("복사된 텍스트")}
+            style={{cursor: "pointer"}}
+          >
             <img src="../result-img/link-white.png" id="img4" />
           </S.LinkBtn>
         </S.Imgwrapper>
