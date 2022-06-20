@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import {useEffect} from "react";
 import * as S from "./style";
 
 const WebPage = () => {
@@ -11,6 +12,35 @@ const WebPage = () => {
     } catch (error) {
       alert("복사 실패!");
     }
+  };
+
+  const kakao = (window as any).kakao;
+
+  const kakaoKey = useEffect(() => {
+    kakao.init(process.env.REACT_APP_KAKAO_KEY);
+  }, []);
+
+  const kakaoShare = () => {
+    kakao.Link.sendDefault({
+      objectType: "feed",
+      content: {
+        title: "미리미림",
+        description: "예비 미림인을 위한 과 적성 테스트",
+        imageUrl: `${process.env.PUBLIC_URL}/result-img/main.jpeg`,
+        link: {
+          mobileWebUrl: "https://mirimirim-936ae.web.app/web",
+          androidExecParams: "test",
+        },
+      },
+      buttons: [
+        {
+          title: "웹으로 이동",
+          link: {
+            mobileWebUrl: "https://mirimirim-936ae.web.app/web",
+          },
+        },
+      ],
+    });
   };
 
   return (
@@ -26,7 +56,7 @@ const WebPage = () => {
         <S.Developer4>김예슬</S.Developer4>
         <S.Developer5>이다혜</S.Developer5>
 
-        <S.Share style={{cursor: "pointer"}}>
+        <S.Share onClick={kakaoShare} style={{cursor: "pointer"}}>
           <img src="../result-img/share-white.png" id="img3" />
         </S.Share>
 
