@@ -21,8 +21,11 @@ const DesignPage = () => {
   };
 
   useEffect(() => {
-    window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
-    console.log(window.Kakao.isInitialized());
+    console.log("kakao init");
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
+      console.log(window.Kakao.isInitialized());
+    }
   }, []);
 
   const kakaoShare = () => {
