@@ -63,12 +63,15 @@ export const QnaItem = styled.button`
     color: #e6e6e6;
     /* box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.5); */
     transition: all 0.5s;
-
-    &:active {
-      background-color: #2a5e4e;
-    }
   }
 
+  &:visited {
+    background-color: #e6e6e6;
+  }
+
+  /* &:active {
+      background-color: #2a5e4e;
+    } */
   #content {
     width: 500px;
     height: 80px;

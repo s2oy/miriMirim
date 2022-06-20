@@ -73,39 +73,61 @@ const QnaPage = () => {
     // 일단 let count[2] = '디자인과' 이렇게 정렬하고 넣자..........근데이게되긴함?
     // setLoading(true);
 
-    //0번째 값이 12개가 되면 솦과
+    //확인
+    // 소프트웨어과 값이 가장 많을 때 =>  확인
+    // 웹솔 값이 가장 많을 때 => 확인
+    // 디자인 값이 가장 많을 때 => 확인
+    // 솦과만 눌렀을 때 => 디자인 나옴 5번으로 가세요 => 해결
+    // 웹솔만 눌렀을 때 => 확인
+    // 디자인만 눌렀을 때 => 확인 디자인과의 절규 나옴
+    // 솦과랑 디자인이랑 6 6개일 때 => 확인
+    // 솦과랑 웹솔이랑 6 6 일 때 => 확인
+    // 디자인이랑 웹이랑 6 6일때 => 확인
+    // 솦4 웹4 디4 어떻게 할거임 => 웹으로 보내버림 여튼 확인함
 
     // // 소프트웨어과의 값이 12 => 소프트웨어 이동
-    if (soft === 11) {
-      navigate("/soft");
-    }
-    // 웹솔루션과의 값이 12 => 웹솔루션 이동
-    if (web === 11) {
-      navigate("/web");
-    }
-    // 디자인과의 값이 12 => 디자인과 이동
-    if (design === 11) {
-      navigate("/design");
+    if (soft == web && soft == design && web == design) {
+      setTimeout(() => {
+        navigate("/web");
+      }, 3000);
+      return <span>4개 다 동표 ㄹㅈㄷ네</span>;
     }
 
-    // navigate("/web");
     // 소프트웨어과랑 디자인과랑 동표 => 웹솔루션 이동
     if (soft == design) {
-      navigate("/web");
+      if (web == 0) {
+        setTimeout(() => {
+          navigate("/web");
+        }, 3000);
+        return <span>3</span>;
+      }
     }
     // 소프트웨어과랑 웹솔루션과랑 동표 => 소프트웨어 이동
     if (soft == web) {
-      navigate("/soft");
+      if (design >= 0 && design < 2) {
+        setTimeout(() => {
+          navigate("/soft");
+        }, 3000);
+        return <span>4</span>;
+      }
     }
     // 웹솔루션과랑 디자인과랑 동표 => 디자인 이동
     if (web == design) {
-      navigate("/design");
+      if (soft >= 0 && soft < 2) {
+        setTimeout(() => {
+          navigate("/design");
+        }, 3000);
+        return <span>5</span>;
+      }
     }
     // 소프트웨어과가 웹솔보다 크면 => 소프트웨어 이동
     if (soft > web) {
       // 소프트웨어가 디자인보다 크면 => 소프트웨어 이동
       if (soft > design) {
-        navigate("/soft");
+        setTimeout(() => {
+          navigate("/soft");
+        }, 3000);
+        return <span>6</span>;
       }
     }
 
@@ -113,7 +135,10 @@ const QnaPage = () => {
     if (web > soft) {
       // 웹솔루션이 디자인보다 크면 => 웹솔루션 이동
       if (web > design) {
-        navigate("/web");
+        setTimeout(() => {
+          navigate("/web");
+        }, 3000);
+        return <span>7</span>;
       }
     }
 
@@ -121,64 +146,24 @@ const QnaPage = () => {
     if (design > soft) {
       // 디자인이 웹솔루션보다 크면 => 디자인 이동
       if (design > web) {
-        navigate("/design");
+        setTimeout(() => {
+          navigate("/design");
+        }, 3000);
+        return (
+          <>
+            <span>엉킨 디자인과 소프트의 절규</span>
+          </>
+        );
       }
     }
-
-    ///./////////
-    // 소프트웨어과가 웹솔과보다 크거나 같고 디자인과보다 크면 software
-    // if (count[0] >= count[1]) {
-    //   if (count[0] > count[2]) {
-    //     navigate("/soft");
-    //   }
-    // }
-    // if (count[1] == 12) {
-    //   navigate("/soft");
-    // }
-    // // 웹솔과가 디자인과보다 크거나 같고 솦과보다 크면 web
-    // if (count[1] >= count[2]) {
-    //   if (count[1] > count[0]) {
-    //     navigate("/web");
-    //   }
-    // }
-    // if (count[0] == 12) {
-    //   navigate("/web");
-    // }
-
-    // // 디자인과보다 웹솔이 크거나 같고  디자인과보다 크면 디자인
-    // if (count[2] >= count[1]) {
-    //   if (count[2] > count[0]) {
-    //     navigate("/design");
-    //   }
-    // }
     return 0;
   };
-  //   setTimeout(() => {
-  //     const examResult = result.join("");
-  //     // // navigate(`/result/${examResult}`);
-  //     navigate(`/design`);
-  //   }, 3000);
-  // };
-
-  // 클릭한 버튼의 해당 value 값을 높이기 (증감 연산자 사용해서 value값 높이기)
-  // 3가지   비교를 어떻게 할 것인지?
-  //if ~과의 수가 제일 많으면 location.href = '과경로' 뒤로가지지않게하려면 location.replace로 해야함
-  //index 생략 가능) 현재 배열요소의 index? (번호같은개념인듯)
-  // const  = userAns.reduce((acc, index) => {});
-  // 중첩 if사용해서 비교하기
-
-  // qnaData[q].a = qnaData[q].a++;
-
-  // if (qnaData[q].a[0].value.length > qnaData[q].a[1].value.length) {
-  //   navigate("/soft");
-  // } else {
-  //   navigate("/design");
-  // }
 
   if (!qnaData[q]) return <>{handleMoveToResult()}</>;
+
   return (
     <>
-      {/* {!loading && ( */}
+      {loading ? <span>loading</span> : null}
       <S.QnaWrapper>
         <MainContainer>
           <MainWhiteBox></MainWhiteBox>
@@ -210,12 +195,6 @@ const QnaPage = () => {
           </S.QnaItemContainer>
         </MainContainer>
       </S.QnaWrapper>
-      {/* )}
-      {loading && (
-        <>
-          <div>로딩중</div>
-        </>
-      )} */}
     </>
   );
 };
