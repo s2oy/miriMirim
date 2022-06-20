@@ -30,6 +30,10 @@ const QnaPage = () => {
   const [loading, setLoading] = useState(false);
   const TOTAL_SLIDES = 12;
 
+  const [soft, setSoft] = useState<number>(0);
+  const [web, setWeb] = useState<number>(0);
+  const [design, setDesign] = useState<number>(0);
+
   // const handleOnSelect = (e: MouseEvent<HTMLButtonElement>) => {
   //   const value = e.currentTarget.value;
   //   setUserClass(prev => [...prev, value]);
@@ -41,8 +45,8 @@ const QnaPage = () => {
     setUserClass(userClass + qnaData[q].a[0].value);
     setQ(q + 1);
     setCurrentSlide(currentSlide + 1);
-    count[0]++;
-    console.log(count[0]);
+    setSoft(soft + 1);
+    console.log(soft);
   };
 
   const nextSlideSec2 = () => {
@@ -50,8 +54,8 @@ const QnaPage = () => {
     setUserClass(userClass + qnaData[q].a[1].value);
     setQ(q + 1);
     setCurrentSlide(currentSlide + 1);
-    count[1]++;
-    console.log(count[1]);
+    setWeb(web + 1);
+    console.log(web);
   };
 
   const nextSlideSec3 = (e: any) => {
@@ -59,8 +63,8 @@ const QnaPage = () => {
     setUserClass(userClass + qnaData[q].a[2].value);
     setQ(q + 1);
     setCurrentSlide(currentSlide + 1);
-    count[2]++;
-    console.log(count[2]);
+    setDesign(design + 1);
+    console.log(design);
   };
 
   const handleMoveToResult = () => {
@@ -71,67 +75,84 @@ const QnaPage = () => {
 
     //0번째 값이 12개가 되면 솦과
 
-    if (count[0] >= count[1]) {
-      if (count[0] > count[2]) {
+    // // 소프트웨어과의 값이 12 => 소프트웨어 이동
+    if (soft === 11) {
+      navigate("/soft");
+    }
+    // 웹솔루션과의 값이 12 => 웹솔루션 이동
+    if (web === 11) {
+      navigate("/web");
+    }
+    // 디자인과의 값이 12 => 디자인과 이동
+    if (design === 11) {
+      navigate("/design");
+    }
+
+    // navigate("/web");
+    // 소프트웨어과랑 디자인과랑 동표 => 웹솔루션 이동
+    if (soft == design) {
+      navigate("/web");
+    }
+    // 소프트웨어과랑 웹솔루션과랑 동표 => 소프트웨어 이동
+    if (soft == web) {
+      navigate("/soft");
+    }
+    // 웹솔루션과랑 디자인과랑 동표 => 디자인 이동
+    if (web == design) {
+      navigate("/design");
+    }
+    // 소프트웨어과가 웹솔보다 크면 => 소프트웨어 이동
+    if (soft > web) {
+      // 소프트웨어가 디자인보다 크면 => 소프트웨어 이동
+      if (soft > design) {
         navigate("/soft");
       }
     }
 
-    if (count[0] == count[1]) {
-      navigate("/soft");
-    }
-
-    if (count[1] > count[2]) {
-      if (count[1] > count[0]) {
-        if (count[1] == 12) {
-          navigate("/web");
-        }
+    // 웹솔루션이 소프트웨어보다 크면 => 웹솔루션 이동
+    if (web > soft) {
+      // 웹솔루션이 디자인보다 크면 => 웹솔루션 이동
+      if (web > design) {
+        navigate("/web");
       }
     }
 
-    if (count[2] == count[0]) {
-      navigate("/web");
-    }
-
-    // 디자인과보다 솦과가
-    if (count[2] > count[1]) {
-      if (count[2] > count[0]) {
+    // 디자인이 소프트웨어보다 크면 => 디자인 이동
+    if (design > soft) {
+      // 디자인이 웹솔루션보다 크면 => 디자인 이동
+      if (design > web) {
         navigate("/design");
       }
     }
 
-    if (count[2] == count[1]) {
-      navigate("/design");
-    }
+    ///./////////
+    // 소프트웨어과가 웹솔과보다 크거나 같고 디자인과보다 크면 software
+    // if (count[0] >= count[1]) {
+    //   if (count[0] > count[2]) {
+    //     navigate("/soft");
+    //   }
+    // }
+    // if (count[1] == 12) {
+    //   navigate("/soft");
+    // }
+    // // 웹솔과가 디자인과보다 크거나 같고 솦과보다 크면 web
+    // if (count[1] >= count[2]) {
+    //   if (count[1] > count[0]) {
+    //     navigate("/web");
+    //   }
+    // }
+    // if (count[0] == 12) {
+    //   navigate("/web");
+    // }
+
+    // // 디자인과보다 웹솔이 크거나 같고  디자인과보다 크면 디자인
+    // if (count[2] >= count[1]) {
+    //   if (count[2] > count[0]) {
+    //     navigate("/design");
+    //   }
+    // }
+    return 0;
   };
-
-  //   if (count[2] > count[0]) {
-  //     if (count[2] > count[1]) {
-  //       navigate("/design");
-  //     }
-  //   }
-
-  //   // 0번과 1번이 같을 때 어떻게 할지
-  //   if (count[0] == count[1]) {
-  //     navigate("/soft");
-  //   }
-
-  //   // 1번과 2번이 같을 때 어떻게 할지
-  //   if (count[1] == count[2]) {
-  //     navigate("/design");
-  //   }
-
-  //   // 0번과 2번이 같을 때 어떻게 할지
-  //   if (count[0] == count[2]) {
-  //     navigate("/web");
-  //   }
-
-  //   // 투표 개수가 모두 같을 때 어떻게 해결할지
-  //   if (count[0] == count[1] && count[0] == count[2] && count[1] == count[2]) {
-  //     navigate("/web");
-  //   }
-  // };
-
   //   setTimeout(() => {
   //     const examResult = result.join("");
   //     // // navigate(`/result/${examResult}`);
@@ -161,6 +182,14 @@ const QnaPage = () => {
       <S.QnaWrapper>
         <MainContainer>
           <MainWhiteBox></MainWhiteBox>
+          <S.CountWrapper
+            style={
+              qnaData[q].id <= 9 ? {marginLeft: "73.5%"} : {marginLeft: "72.8%"}
+            }
+          >
+            <span className="count_q">{qnaData[q].id}</span>
+            <span className="total_q"> /{TOTAL_SLIDES}</span>
+          </S.CountWrapper>
           <S.TitleContainer>
             {/* {qnaData.map((q: any, id: number) => (
             <S.Title key={q.id}>{qnaData[0].q}</S.Title>

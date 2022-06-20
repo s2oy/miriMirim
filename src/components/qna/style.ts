@@ -2,6 +2,26 @@ import styled from "@emotion/styled";
 
 export const QnaWrapper = styled.div``;
 
+export const CountWrapper = styled.div`
+  position: absolute;
+  /* margin-left: 73.1%; */
+  margin-top: 92px;
+  .count_q {
+    color: #37876d;
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+  }
+
+  .total_q {
+    color: #e8e7e6;
+    font-family: "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    font-weight: bold;
+    margin-top: 12px;
+    font-size: 35px;
+  }
+`;
+
 export const QnaItemContainer = styled.div`
   position: absolute;
   display: flex !important;
@@ -40,9 +60,13 @@ export const QnaItem = styled.button`
 
   &:hover {
     background-color: #37876d;
-    color: #424242;
+    color: #e6e6e6;
     /* box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.5); */
     transition: all 0.5s;
+
+    &:active {
+      background-color: #2a5e4e;
+    }
   }
 
   #content {
@@ -75,6 +99,7 @@ export const Title = styled.h2`
   top: 33%;
   left: 50%;
   transform: translate(-50%, 0%);
+  color: #37876d;
 
   /* justify-content: space-around; */
 `;
