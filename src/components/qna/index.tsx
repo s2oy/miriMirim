@@ -6,6 +6,7 @@ import MainWhiteBox from "../main/items/MainWhiteBox";
 import QnaItem from "../qna/QnaItem";
 // @ts-ignore
 import qnaData from "../../db/qnaList";
+import {off} from "process";
 
 // export interface qnaProps {
 //   data: {
@@ -17,9 +18,7 @@ import qnaData from "../../db/qnaList";
 //     }
 // }
 
-export let num1 = 0;
-export let num2 = 0;
-export let num3 = 0;
+export let count = [0, 0, 0];
 
 const QnaPage = () => {
   // const [qna, setQna]: any = useState([]);
@@ -42,8 +41,8 @@ const QnaPage = () => {
     setUserClass(userClass + qnaData[q].a[0].value);
     setQ(q + 1);
     setCurrentSlide(currentSlide + 1);
-    num1++;
-    console.log(num1);
+    count[0]++;
+    console.log(count[0]);
   };
 
   const nextSlideSec2 = () => {
@@ -51,39 +50,87 @@ const QnaPage = () => {
     setUserClass(userClass + qnaData[q].a[1].value);
     setQ(q + 1);
     setCurrentSlide(currentSlide + 1);
-    num2++;
-    console.log(num2);
+    count[1]++;
+    console.log(count[1]);
   };
 
-  const nextSlideSec3 = () => {
+  const nextSlideSec3 = (e: any) => {
     //다음 질문으로 넘어감
     setUserClass(userClass + qnaData[q].a[2].value);
     setQ(q + 1);
     setCurrentSlide(currentSlide + 1);
-    num3++;
-    console.log(num3);
+    count[2]++;
+    console.log(count[2]);
   };
 
   const handleMoveToResult = () => {
+    //1. 값을 일단 비교해 그리고 count[0]은 솦과로 변경..이런식으로 배열 값 변경 해줘야함.
+    //근데 그러면 오름차순 정렬은 어떻게 할건데?
+    // 일단 let count[2] = '디자인과' 이렇게 정렬하고 넣자..........근데이게되긴함?
     // setLoading(true);
-    if (num1 >= num2) {
-      if (num1 > num3) {
+
+    //0번째 값이 12개가 되면 솦과
+
+    if (count[0] >= count[1]) {
+      if (count[0] > count[2]) {
         navigate("/soft");
       }
     }
 
-    if (num2 > num1) {
-      if (num2 >= num3) {
-        navigate("/web");
+    if (count[0] == count[1]) {
+      navigate("/soft");
+    }
+
+    if (count[1] > count[2]) {
+      if (count[1] > count[0]) {
+        if (count[1] == 12) {
+          navigate("/web");
+        }
       }
     }
 
-    if (num3 >= num1) {
-      if (num3 > num2) {
+    if (count[2] == count[0]) {
+      navigate("/web");
+    }
+
+    // 디자인과보다 솦과가
+    if (count[2] > count[1]) {
+      if (count[2] > count[0]) {
         navigate("/design");
       }
     }
+
+    if (count[2] == count[1]) {
+      navigate("/design");
+    }
   };
+
+  //   if (count[2] > count[0]) {
+  //     if (count[2] > count[1]) {
+  //       navigate("/design");
+  //     }
+  //   }
+
+  //   // 0번과 1번이 같을 때 어떻게 할지
+  //   if (count[0] == count[1]) {
+  //     navigate("/soft");
+  //   }
+
+  //   // 1번과 2번이 같을 때 어떻게 할지
+  //   if (count[1] == count[2]) {
+  //     navigate("/design");
+  //   }
+
+  //   // 0번과 2번이 같을 때 어떻게 할지
+  //   if (count[0] == count[2]) {
+  //     navigate("/web");
+  //   }
+
+  //   // 투표 개수가 모두 같을 때 어떻게 해결할지
+  //   if (count[0] == count[1] && count[0] == count[2] && count[1] == count[2]) {
+  //     navigate("/web");
+  //   }
+  // };
 
   //   setTimeout(() => {
   //     const examResult = result.join("");
