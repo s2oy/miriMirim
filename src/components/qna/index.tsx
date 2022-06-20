@@ -4,6 +4,7 @@ import * as S from "./style";
 import {MainContainer} from "../main/style";
 import MainWhiteBox from "../main/items/MainWhiteBox";
 import QnaItem from "../qna/QnaItem";
+import LoadingPage from "../loading/Loading";
 // @ts-ignore
 import qnaData from "../../db/qnaList";
 import {off} from "process";
@@ -90,7 +91,7 @@ const QnaPage = () => {
       setTimeout(() => {
         navigate("/web");
       }, 3000);
-      return <span>4개 다 동표 ㄹㅈㄷ네</span>;
+      return <LoadingPage />;
     }
 
     // 소프트웨어과랑 디자인과랑 동표 => 웹솔루션 이동
@@ -99,7 +100,7 @@ const QnaPage = () => {
         setTimeout(() => {
           navigate("/web");
         }, 3000);
-        return <span>3</span>;
+        return <LoadingPage />;
       }
     }
     // 소프트웨어과랑 웹솔루션과랑 동표 => 소프트웨어 이동
@@ -108,7 +109,7 @@ const QnaPage = () => {
         setTimeout(() => {
           navigate("/soft");
         }, 3000);
-        return <span>4</span>;
+        return <LoadingPage />;
       }
     }
     // 웹솔루션과랑 디자인과랑 동표 => 디자인 이동
@@ -117,7 +118,7 @@ const QnaPage = () => {
         setTimeout(() => {
           navigate("/design");
         }, 3000);
-        return <span>5</span>;
+        return <LoadingPage />;
       }
     }
     // 소프트웨어과가 웹솔보다 크면 => 소프트웨어 이동
@@ -127,7 +128,7 @@ const QnaPage = () => {
         setTimeout(() => {
           navigate("/soft");
         }, 3000);
-        return <span>6</span>;
+        return <LoadingPage />;
       }
     }
 
@@ -138,7 +139,7 @@ const QnaPage = () => {
         setTimeout(() => {
           navigate("/web");
         }, 3000);
-        return <span>7</span>;
+        return <LoadingPage />;
       }
     }
 
@@ -149,11 +150,7 @@ const QnaPage = () => {
         setTimeout(() => {
           navigate("/design");
         }, 3000);
-        return (
-          <>
-            <span>엉킨 디자인과 소프트의 절규</span>
-          </>
-        );
+        return <LoadingPage />;
       }
     }
     return 0;
@@ -163,7 +160,6 @@ const QnaPage = () => {
 
   return (
     <>
-      {loading ? <span>loading</span> : null}
       <S.QnaWrapper>
         <MainContainer>
           <MainWhiteBox></MainWhiteBox>

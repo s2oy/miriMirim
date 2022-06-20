@@ -7,6 +7,7 @@ import QnaPage from "./components/qna";
 import WebPage from "./components/web";
 import NotFound from "./components/404";
 import SoftwarePage from "./components/software";
+import LoadingPage from "./components/loading/Loading";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/web" element={<WebPage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/soft" element={<SoftwarePage />} />
+        <Route path="/load" element={<LoadingPage />} />
       </Routes>
     </BrowserRouter>
   );
