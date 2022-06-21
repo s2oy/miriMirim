@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import * as S from "./style";
 import Modal from "./Modal";
-import ReactAudioPlayer from 'react-audio-player';
+import ReactAudioPlayer from "react-audio-player";
 
 // interface Props {
 //   item: any;
-// }
+// }npm
 
 const MainWhiteBox = (item: any) => {
   // if (item === undefined) return <></>;
@@ -24,14 +24,13 @@ const MainWhiteBox = (item: any) => {
           src="https://drive.google.com/uc?export=download&id=1Yq-osHFqz7FX_uHzpY-G2SR2qNBKLoSm"
           autoPlay
           controls
-        />
-
-        <img
-          src={sound ? "/assets/mute.svg" : "/assets/volume.svg"}
-          onClick={() => setSound(!sound)}
-          alt=""
-        />
-        
+        >
+          <img
+            src={sound ? "/assets/mute.svg" : "/assets/volume.svg"}
+            onClick={() => setSound(!sound)}
+            alt=""
+          />
+        </ReactAudioPlayer>
       </S.BoxContainer>
     </S.WhiteBoxContainer>
   );

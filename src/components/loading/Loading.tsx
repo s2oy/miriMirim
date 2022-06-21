@@ -14,6 +14,18 @@ const LoadingPage = () => {
             <div></div>
           </div>
         </div>
+
+        <div className="geeks">
+          <span>나에게 </span>
+          <span> 맞는</span>
+          <span> 과를</span>
+          <span> 탐색</span>
+          <span>하는</span>
+          <span> 중</span>
+          <span>.</span>
+          <span>.</span>
+          <span>.</span>
+        </div>
       </S.Spinner>
     </>
   );
