@@ -58,10 +58,6 @@ const SoftwarePage = () => {
         <S.Imgwrapper>
           <img src="../result-img/software.png" id="img1" />
 
-          <S.Top>60% 웹솔루션과</S.Top>
-          <S.Mid>30% 소프트웨어과</S.Mid>
-          <S.Bottom>10% 디자인과</S.Bottom>
-
           <S.Introduce>송은원 백서연 최지우 김예슬 이다혜</S.Introduce>
 
           <Link to="/">
