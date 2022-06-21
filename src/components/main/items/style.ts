@@ -117,3 +117,5 @@ export const ModalContainer = styled.div`
     }
   }
 `;
+
+export const Button = styled.button``;

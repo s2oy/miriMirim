@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import * as S from "./style";
 import Modal from "./Modal";
+import ReactAudioPlayer from 'react-audio-player';
 
 // interface Props {
 //   item: any;
@@ -19,12 +20,18 @@ const MainWhiteBox = (item: any) => {
           <div className="btn_green btn"></div>
           <span>mirim</span>
         </S.Header>
+        <ReactAudioPlayer
+          src="https://drive.google.com/uc?export=download&id=1Yq-osHFqz7FX_uHzpY-G2SR2qNBKLoSm"
+          autoPlay
+          controls
+        />
 
         <img
           src={sound ? "/assets/mute.svg" : "/assets/volume.svg"}
           onClick={() => setSound(!sound)}
           alt=""
         />
+        
       </S.BoxContainer>
     </S.WhiteBoxContainer>
   );
