@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App";
 import {RecoilRoot} from "recoil";
 // import firebase from "firebase";
+import "react-toastify/dist/ReactToastify.css";
 import styled from "@emotion/styled";
 
 const Flex = styled.div`

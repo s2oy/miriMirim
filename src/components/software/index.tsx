@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import * as S from "./style";
 import {useEffect} from "react";
+import {ToastSuccess, ToastError} from "../../lib/hook/toastHook";
 
 declare global {
   interface Window {
@@ -14,9 +15,9 @@ const SoftwarePage = () => {
     try {
       await navigator.clipboard.writeText(text);
 
-      alert("복사 성공!");
+      ToastSuccess("복사 성공!");
     } catch (error) {
-      alert("복사 실패!");
+      ToastError("복사 실패!");
     }
   };
 
