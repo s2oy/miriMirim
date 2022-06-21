@@ -53,21 +53,22 @@ export const QnaItem = styled.button`
   text-align: center;
   font-size: 1.3em;
   padding: 10px;
-  padding :hover {
-    background-color: #37876d;
-    color: #dcdcdc;
-  }
 
   &:hover {
+    background-color: #e0e0e0;
+    color: #707070;
+  }
+
+  &:active {
     background-color: #37876d;
     color: #e6e6e6;
     /* box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.5); */
-    transition: all 0.5s;
+    /* transition: all 0.1s; */
   }
 
-  &:visited {
+  /* &:visited {
     background-color: #e6e6e6;
-  }
+  } */
 
   /* &:active {
       background-color: #2a5e4e;
