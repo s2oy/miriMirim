@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import * as S from "./style";
 import {useEffect} from "react";
-import {ToastSuccess, ToastError} from "../../lib/hook/toastHook";
+import {ToastSuccess, ToastError, Toast} from "../../lib/hook/toastHook";
 
 declare global {
   interface Window {
@@ -14,7 +14,6 @@ const SoftwarePage = () => {
   const handleCopyClipBoard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
-
       ToastSuccess("복사 성공!");
     } catch (error) {
       ToastError("복사 실패!");
