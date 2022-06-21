@@ -22,6 +22,15 @@ export const CountWrapper = styled.div`
   }
 `;
 
+export const Hidden = styled.span`
+  height: 30px;
+  margin-left: 34%;
+  margin-top: 18px;
+  position: absolute;
+  color: black;
+  background-color: #e6e6e6;
+`;
+
 export const QnaItemContainer = styled.div`
   position: absolute;
   display: flex !important;
