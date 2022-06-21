@@ -13,7 +13,7 @@ const NotFound = () => {
           <S.ModalContainer>
             <h2>이런! 길을 잃으셨군요</h2>
             <p>
-              원활한 테스트 진행을 위해서 <br />
+              원활한 테스트 진행을 위해서<br />
               아래 버튼을 눌러 테스트로 이동해주세요.
             </p>
             <Link to="/" style={{textDecoration: "none", cursor: "pointer"}}>

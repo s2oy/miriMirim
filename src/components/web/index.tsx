@@ -3,6 +3,12 @@ import {Link} from "react-router-dom";
 import {useEffect} from "react";
 import * as S from "./style";
 
+declare global {
+  interface Window {
+    Kakao: any;
+  }
+}
+
 const WebPage = () => {
   const handleCopyClipBoard = async (text: string) => {
     try {
@@ -14,29 +20,34 @@ const WebPage = () => {
     }
   };
 
-  const kakao = (window as any).kakao;
+  // const kakao = (window as any).kakao;
 
-  const kakaoKey = useEffect(() => {
-    kakao.init(process.env.REACT_APP_KAKAO_KEY);
+  useEffect(() => {
+    console.log("kakao init");
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
+      console.log(window.Kakao.isInitialized());
+    }
   }, []);
 
   const kakaoShare = () => {
-    kakao.Link.sendDefault({
+    window.Kakao.Link.sendDefault({
       objectType: "feed",
       content: {
         title: "미리미림",
         description: "예비 미림인을 위한 과 적성 테스트",
         imageUrl: `${process.env.PUBLIC_URL}/result-img/main.jpeg`,
         link: {
-          mobileWebUrl: "https://mirimirim-936ae.web.app/web",
-          androidExecParams: "test",
+          mobileWebUrl: "https://mirimirim-936ae.web.app",
+          webUrl: "https://mirimirim-936ae.web.app",
         },
       },
       buttons: [
         {
           title: "웹으로 이동",
           link: {
-            mobileWebUrl: "https://mirimirim-936ae.web.app/web",
+            mobileWebUrl: "https://mirimirim-936ae.web.app",
+            webUrl: "https://mirimirim-936ae.web.app",
           },
         },
       ],

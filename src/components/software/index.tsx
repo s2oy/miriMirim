@@ -1,6 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import * as S from "./style";
+import {useEffect} from "react";
+
+declare global {
+  interface Window {
+    Kakao: any;
+  }
+}
 
 const SoftwarePage = () => {
   const handleCopyClipBoard = async (text: string) => {
@@ -11,6 +18,38 @@ const SoftwarePage = () => {
     } catch (error) {
       alert("복사 실패!");
     }
+  };
+
+  useEffect(() => {
+    console.log("kakao init");
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
+      console.log(window.Kakao.isInitialized());
+    }
+  }, []);
+
+  const kakaoShare = () => {
+    window.Kakao.Link.sendDefault({
+      objectType: "feed",
+      content: {
+        title: "미리미림",
+        description: "예비 미림인을 위한 과 적성 테스트",
+        imageUrl: `${process.env.PUBLIC_URL}/result-img/main.jpeg`,
+        link: {
+          mobileWebUrl: "https://mirimirim-936ae.web.app",
+          webUrl: "https://mirimirim-936ae.web.app",
+        },
+      },
+      buttons: [
+        {
+          title: "웹으로 이동",
+          link: {
+            mobileWebUrl: "https://mirimirim-936ae.web.app",
+            webUrl: "https://mirimirim-936ae.web.app",
+          },
+        },
+      ],
+    });
   };
 
   return (
@@ -31,7 +70,7 @@ const SoftwarePage = () => {
             </S.Home>
           </Link>
 
-          <S.ShareBtn style={{cursor: "pointer"}}>
+          <S.ShareBtn onClick={kakaoShare} style={{cursor: "pointer"}}>
             <img src="../result-img/share-white.png" id="img3" />
           </S.ShareBtn>
 

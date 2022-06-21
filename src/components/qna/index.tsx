@@ -4,6 +4,7 @@ import * as S from "./style";
 import {MainContainer} from "../main/style";
 import MainWhiteBox from "../main/items/MainWhiteBox";
 import QnaItem from "../qna/QnaItem";
+import LoadingPage from "../loading/Loading";
 // @ts-ignore
 import qnaData from "../../db/qnaList";
 import {off} from "process";
@@ -30,6 +31,10 @@ const QnaPage = () => {
   const [loading, setLoading] = useState(false);
   const TOTAL_SLIDES = 12;
 
+  const [soft, setSoft] = useState<number>(0);
+  const [web, setWeb] = useState<number>(0);
+  const [design, setDesign] = useState<number>(0);
+
   // const handleOnSelect = (e: MouseEvent<HTMLButtonElement>) => {
   //   const value = e.currentTarget.value;
   //   setUserClass(prev => [...prev, value]);
@@ -41,8 +46,8 @@ const QnaPage = () => {
     setUserClass(userClass + qnaData[q].a[0].value);
     setQ(q + 1);
     setCurrentSlide(currentSlide + 1);
-    count[0]++;
-    console.log(count[0]);
+    setSoft(soft + 1);
+    console.log(soft);
   };
 
   const nextSlideSec2 = () => {
@@ -50,8 +55,8 @@ const QnaPage = () => {
     setUserClass(userClass + qnaData[q].a[1].value);
     setQ(q + 1);
     setCurrentSlide(currentSlide + 1);
-    count[1]++;
-    console.log(count[1]);
+    setWeb(web + 1);
+    console.log(web);
   };
 
   const nextSlideSec3 = (e: any) => {
@@ -59,8 +64,8 @@ const QnaPage = () => {
     setUserClass(userClass + qnaData[q].a[2].value);
     setQ(q + 1);
     setCurrentSlide(currentSlide + 1);
-    count[2]++;
-    console.log(count[2]);
+    setDesign(design + 1);
+    console.log(design);
   };
 
   const handleMoveToResult = () => {
@@ -69,98 +74,103 @@ const QnaPage = () => {
     // 일단 let count[2] = '디자인과' 이렇게 정렬하고 넣자..........근데이게되긴함?
     // setLoading(true);
 
-    //0번째 값이 12개가 되면 솦과
+    //확인
+    // 소프트웨어과 값이 가장 많을 때 =>  확인
+    // 웹솔 값이 가장 많을 때 => 확인
+    // 디자인 값이 가장 많을 때 => 확인
+    // 솦과만 눌렀을 때 => 디자인 나옴 5번으로 가세요 => 해결
+    // 웹솔만 눌렀을 때 => 확인
+    // 디자인만 눌렀을 때 => 확인 디자인과의 절규 나옴
+    // 솦과랑 디자인이랑 6 6개일 때 => 확인
+    // 솦과랑 웹솔이랑 6 6 일 때 => 확인
+    // 디자인이랑 웹이랑 6 6일때 => 확인
+    // 솦4 웹4 디4 어떻게 할거임 => 웹으로 보내버림 여튼 확인함
 
-    if (count[0] >= count[1]) {
-      if (count[0] > count[2]) {
-        navigate("/soft");
-      }
+    // // 소프트웨어과의 값이 12 => 소프트웨어 이동
+    if (soft == web && soft == design && web == design) {
+      setTimeout(() => {
+        navigate("/web");
+      }, 3000);
+      return <LoadingPage />;
     }
 
-    if (count[0] == count[1]) {
-      navigate("/soft");
-    }
-
-    if (count[1] > count[2]) {
-      if (count[1] > count[0]) {
-        if (count[1] == 12) {
+    // 소프트웨어과랑 디자인과랑 동표 => 웹솔루션 이동
+    if (soft == design) {
+      if (web == 0) {
+        setTimeout(() => {
           navigate("/web");
-        }
+        }, 3000);
+        return <LoadingPage />;
+      }
+    }
+    // 소프트웨어과랑 웹솔루션과랑 동표 => 소프트웨어 이동
+    if (soft == web) {
+      if (design >= 0 && design < 2) {
+        setTimeout(() => {
+          navigate("/soft");
+        }, 3000);
+        return <LoadingPage />;
+      }
+    }
+    // 웹솔루션과랑 디자인과랑 동표 => 디자인 이동
+    if (web == design) {
+      if (soft >= 0 && soft < 2) {
+        setTimeout(() => {
+          navigate("/design");
+        }, 3000);
+        return <LoadingPage />;
+      }
+    }
+    // 소프트웨어과가 웹솔보다 크면 => 소프트웨어 이동
+    if (soft > web) {
+      // 소프트웨어가 디자인보다 크면 => 소프트웨어 이동
+      if (soft > design) {
+        setTimeout(() => {
+          navigate("/soft");
+        }, 3000);
+        return <LoadingPage />;
       }
     }
 
-    if (count[2] == count[0]) {
-      navigate("/web");
-    }
-
-    // 디자인과보다 솦과가
-    if (count[2] > count[1]) {
-      if (count[2] > count[0]) {
-        navigate("/design");
+    // 웹솔루션이 소프트웨어보다 크면 => 웹솔루션 이동
+    if (web > soft) {
+      // 웹솔루션이 디자인보다 크면 => 웹솔루션 이동
+      if (web > design) {
+        setTimeout(() => {
+          navigate("/web");
+        }, 3000);
+        return <LoadingPage />;
       }
     }
 
-    if (count[2] == count[1]) {
-      navigate("/design");
+    // 디자인이 소프트웨어보다 크면 => 디자인 이동
+    if (design > soft) {
+      // 디자인이 웹솔루션보다 크면 => 디자인 이동
+      if (design > web) {
+        setTimeout(() => {
+          navigate("/design");
+        }, 3000);
+        return <LoadingPage />;
+      }
     }
+    return 0;
   };
 
-  //   if (count[2] > count[0]) {
-  //     if (count[2] > count[1]) {
-  //       navigate("/design");
-  //     }
-  //   }
-
-  //   // 0번과 1번이 같을 때 어떻게 할지
-  //   if (count[0] == count[1]) {
-  //     navigate("/soft");
-  //   }
-
-  //   // 1번과 2번이 같을 때 어떻게 할지
-  //   if (count[1] == count[2]) {
-  //     navigate("/design");
-  //   }
-
-  //   // 0번과 2번이 같을 때 어떻게 할지
-  //   if (count[0] == count[2]) {
-  //     navigate("/web");
-  //   }
-
-  //   // 투표 개수가 모두 같을 때 어떻게 해결할지
-  //   if (count[0] == count[1] && count[0] == count[2] && count[1] == count[2]) {
-  //     navigate("/web");
-  //   }
-  // };
-
-  //   setTimeout(() => {
-  //     const examResult = result.join("");
-  //     // // navigate(`/result/${examResult}`);
-  //     navigate(`/design`);
-  //   }, 3000);
-  // };
-
-  // 클릭한 버튼의 해당 value 값을 높이기 (증감 연산자 사용해서 value값 높이기)
-  // 3가지   비교를 어떻게 할 것인지?
-  //if ~과의 수가 제일 많으면 location.href = '과경로' 뒤로가지지않게하려면 location.replace로 해야함
-  //index 생략 가능) 현재 배열요소의 index? (번호같은개념인듯)
-  // const  = userAns.reduce((acc, index) => {});
-  // 중첩 if사용해서 비교하기
-
-  // qnaData[q].a = qnaData[q].a++;
-
-  // if (qnaData[q].a[0].value.length > qnaData[q].a[1].value.length) {
-  //   navigate("/soft");
-  // } else {
-  //   navigate("/design");
-  // }
-
   if (!qnaData[q]) return <>{handleMoveToResult()}</>;
+
   return (
     <>
-      {/* {!loading && ( */}
       <S.QnaWrapper>
         <MainContainer>
           <MainWhiteBox></MainWhiteBox>
+          <S.CountWrapper
+            style={
+              qnaData[q].id <= 9 ? {marginLeft: "73.5%"} : {marginLeft: "72.8%"}
+            }
+          >
+            <span className="count_q">{qnaData[q].id}</span>
+            <span className="total_q"> /{TOTAL_SLIDES}</span>
+          </S.CountWrapper>
           <S.TitleContainer>
             {/* {qnaData.map((q: any, id: number) => (
             <S.Title key={q.id}>{qnaData[0].q}</S.Title>
@@ -181,12 +191,6 @@ const QnaPage = () => {
           </S.QnaItemContainer>
         </MainContainer>
       </S.QnaWrapper>
-      {/* )}
-      {loading && (
-        <>
-          <div>로딩중</div>
-        </>
-      )} */}
     </>
   );
 };
