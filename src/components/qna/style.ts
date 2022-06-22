@@ -95,6 +95,8 @@ export const QnaItem = styled.button`
     color: red;
     position: absolute;
   }
+
+  border-radius: 7px;
 `;
 
 export const QnaContent = styled.span`
