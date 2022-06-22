@@ -1,6 +1,7 @@
 import React from "react";
 import {Link, useLocation} from "react-router-dom";
 import {useEffect} from "react";
+import {ToastSuccess, ToastError} from "../../lib/hook/toastHook";
 import * as S from "./style";
 
 declare global {
@@ -14,9 +15,9 @@ const DesignPage = () => {
     try {
       await navigator.clipboard.writeText(text);
 
-      alert("복사 성공!");
+      ToastSuccess("복사 성공!");
     } catch (error) {
-      alert("복사 실패!");
+      ToastError("복사 실패!");
     }
   };
 

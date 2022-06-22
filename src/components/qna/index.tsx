@@ -178,6 +178,9 @@ const QnaPage = () => {
 
             <S.Title>{qnaData[q].q}</S.Title>
           </S.TitleContainer>
+          <S.Hidden>
+            <span>{qnaData[q].hidden}</span>
+          </S.Hidden>
           <S.QnaItemContainer>
             <S.QnaItem onClick={nextSlideSec1} value={qnaData[q].a[0].value}>
               {qnaData[q].a[0].answer}

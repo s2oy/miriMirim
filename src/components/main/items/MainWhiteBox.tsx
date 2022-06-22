@@ -20,17 +20,17 @@ const MainWhiteBox = (item: any) => {
           <div className="btn_green btn"></div>
           <span>mirim</span>
         </S.Header>
-        {/* <ReactAudioPlayer
+        <ReactAudioPlayer
           src="https://drive.google.com/uc?export=download&id=1Yq-osHFqz7FX_uHzpY-G2SR2qNBKLoSm"
           autoPlay
-          controls
-        > */}
-        <img
+          loop
+        >
+        {/* <img
           src={sound ? "/assets/mute.svg" : "/assets/volume.svg"}
           onClick={() => setSound(!sound)}
           alt=""
-        />
-        {/* </ReactAudioPlayer> */}
+        /> */}
+        </ReactAudioPlayer>
       </S.BoxContainer>
     </S.WhiteBoxContainer>
   );

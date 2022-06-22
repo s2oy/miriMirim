@@ -8,10 +8,12 @@ import WebPage from "./components/web";
 import NotFound from "./components/404";
 import SoftwarePage from "./components/software";
 import LoadingPage from "./components/loading/Loading";
+import {ToastContainer} from "react-toastify";
 
 function App() {
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Routes>
         <Route path="/design" element={<DesignPage />} />
         <Route path="/" element={<MainPage />} />

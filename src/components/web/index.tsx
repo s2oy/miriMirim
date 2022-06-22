@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
+import {ToastSuccess, ToastError} from "../../lib/hook/toastHook";
 import * as S from "./style";
 
 declare global {
@@ -14,9 +15,9 @@ const WebPage = () => {
     try {
       await navigator.clipboard.writeText(text);
 
-      alert("복사 성공!");
+      ToastSuccess("복사 성공!");
     } catch (error) {
-      alert("복사 실패!");
+      ToastError("복사 실패!");
     }
   };
 
@@ -58,9 +59,6 @@ const WebPage = () => {
     <>
       <S.MainWrapper>
         <S.Img src="../result-img/web.png" id="img1" />
-        <S.Toppercent>60% 웹솔루션과</S.Toppercent>
-        <S.Midpercent>30% 소프트웨어과</S.Midpercent>
-        <S.Bottompercent>10% 디자인과</S.Bottompercent>
         <S.Developer1>송은원</S.Developer1>
         <S.Developer2>백서연</S.Developer2>
         <S.Developer3>최지우</S.Developer3>
