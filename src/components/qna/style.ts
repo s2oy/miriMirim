@@ -96,7 +96,7 @@ export const QnaItem = styled.button`
     position: absolute;
   }
 
-  border-radius: 7px;
+  border-radius: 12px;
 `;
 
 export const QnaContent = styled.span`
