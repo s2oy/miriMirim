@@ -100,18 +100,17 @@ export const Developer5 = styled.span`
 export const Home = styled.button`
   margin: auto 0;
   position: absolute;
-  z-index: 0;
-  left: 74.8%;
-  top: 97%;
+  left: 74.5%;
+  top: 97.3%;
   border: none;
   background-color: transparent;
 `;
+
 export const Share = styled.button`
   margin: auto 0;
   position: absolute;
-  z-index: 0;
-  left: 73.2%;
-  top: 96.6%;
+  left: 73%;
+  top: 97%;
   border: none;
   background-color: transparent;
 `;
@@ -119,7 +118,7 @@ export const Share = styled.button`
 export const LinkBtn = styled.button`
   margin: auto 0;
   position: absolute;
-  left: 72%;
+  left: 71.9%;
   top: 97.3%;
   border: none;
   background-color: transparent;

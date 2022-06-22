@@ -58,7 +58,11 @@ const SoftwarePage = () => {
         <S.Imgwrapper>
           <img src="../result-img/software.png" id="img1" />
 
-          <S.Introduce>송은원 백서연 최지우 김예슬 이다혜</S.Introduce>
+          <S.Developer1>송은원</S.Developer1>
+          <S.Developer2>백서연</S.Developer2>
+          <S.Developer3>최지우</S.Developer3>
+          <S.Developer4>김예슬</S.Developer4>
+          <S.Developer5>이다혜</S.Developer5>
 
           <Link to="/">
             <S.Home style={{cursor: "pointer"}}>

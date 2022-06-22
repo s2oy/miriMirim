@@ -34,9 +34,42 @@ export const Bottom = styled.span`
   color: black;
   font-size: 15pt;
 `;
-export const Introduce = styled.span`
+export const Developer1 = styled.span`
   position: absolute;
-  left: 57.4%;
+  z-index: 0;
+  left: 57%;
+  top: 97%;
+  color: white;
+  font-size: 13pt;
+`;
+export const Developer2 = styled.span`
+  position: absolute;
+  z-index: 0;
+  left: 60%;
+  top: 97%;
+  color: white;
+  font-size: 13pt;
+`;
+export const Developer3 = styled.span`
+  position: absolute;
+  z-index: 0;
+  left: 63%;
+  top: 97%;
+  color: white;
+  font-size: 13pt;
+`;
+export const Developer4 = styled.span`
+  position: absolute;
+  z-index: 0;
+  left: 66%;
+  top: 97%;
+  color: white;
+  font-size: 13pt;
+`;
+export const Developer5 = styled.span`
+  position: absolute;
+  z-index: 0;
+  left: 69%;
   top: 97%;
   color: white;
   font-size: 13pt;
@@ -44,7 +77,7 @@ export const Introduce = styled.span`
 export const Home = styled.button`
   margin: auto 0;
   position: absolute;
-  left: 74%;
+  left: 74.5%;
   top: 97.3%;
   border: none;
   background-color: transparent;
@@ -53,7 +86,7 @@ export const Home = styled.button`
 export const ShareBtn = styled.button`
   margin: auto 0;
   position: absolute;
-  left: 72.5%;
+  left: 73%;
   top: 97%;
   border: none;
   background-color: transparent;
@@ -62,7 +95,7 @@ export const ShareBtn = styled.button`
 export const LinkBtn = styled.button`
   margin: auto 0;
   position: absolute;
-  left: 71.3%;
+  left: 71.9%;
   top: 97.3%;
   border: none;
   background-color: transparent;
